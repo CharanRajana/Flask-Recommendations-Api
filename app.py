@@ -1,6 +1,10 @@
 from flask import Flask, request, jsonify
 from algo import hybrid
 from functions import get_watchlist, add_watchlist
+from dotenv import load_dotenv
+import os
+
+load_dotenv()
 
 app = Flask(__name__)
 
@@ -39,4 +43,4 @@ def update_watchlist():
 
 
 if __name__ == '__main__':
-    app.run()
+    app.run(debug=True, port=os.getenv("PORT", default=5000))
