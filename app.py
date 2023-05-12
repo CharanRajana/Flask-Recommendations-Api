@@ -36,3 +36,7 @@ def update_watchlist():
     ans = add_watchlist(user_id=user_id,movie_id=movie_id)
     print(ans)
     return jsonify(ans)
+
+
+if __name__ == '__main__':
+    app.run()
